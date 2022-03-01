@@ -2,6 +2,9 @@ import resolveColors from '../lib/resolveColors';
 import resolveSizing from '../lib/resolveSizing';
 import resolveSpacing from '../lib/resolveSpacing';
 import resolveTypography from '../lib/resolveTypography';
+import resolveBorder from '../lib/resolveBorder';
+import resolveOpacity from '../lib/resolveOpacity';
+import resolveRadius from '../lib/resolveRadius';
 
 type ThemeMapProps = {
   [key: string]: (value: any) => any;
@@ -12,5 +15,8 @@ const themeMap: ThemeMapProps = {
   typography: resolveTypography,
   sizing: resolveSizing,
   spacing: resolveSpacing,
+  border: resolveBorder,
+  opacity: resolveOpacity,
+  radius: resolveRadius,
 };
 export default themeMap;
