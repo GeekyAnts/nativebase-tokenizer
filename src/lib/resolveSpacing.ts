@@ -1,3 +1,5 @@
+import { spacing } from '../theme/space';
+import { getTokenFromValue } from './getTokenFromValue';
 export default function(value: any) {
-  console.log('hello');
+  return getTokenFromValue(spacing, value);
 }
