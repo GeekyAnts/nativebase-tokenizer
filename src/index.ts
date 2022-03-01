@@ -1,6 +1,6 @@
-export const sum = (a: number, b: number) => {
-  if ('development' === process.env.NODE_ENV) {
-    console.log('boop');
-  }
-  return a + b;
+import { getTokenFromValue } from './utils/getTokenFromValue';
+export const absoluteToNB = (value: any, name?: string) => {
+  const tokenFromValue = getTokenFromValue(value);
+  return tokenFromValue;
+  return name;
 };
