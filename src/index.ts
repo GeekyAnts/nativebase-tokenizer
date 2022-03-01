@@ -1,6 +1,6 @@
-import { getTokenFromValue } from './utils/getTokenFromValue';
-export const absoluteToNB = (value: any, name?: string) => {
-  const tokenFromValue = getTokenFromValue(value);
-  return tokenFromValue;
-  return name;
+import themeMap from './config/themeMap';
+
+export const absoluteToNB = (value: any, name: string) => {
+  const resolver = themeMap[name];
+  return resolver(value);
 };
