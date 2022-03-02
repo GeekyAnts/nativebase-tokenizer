@@ -1,5 +1,6 @@
 import sizes from '../theme/sizes';
 import { getTokenFromValue } from './getTokenFromValue';
-export default function(value: any) {
-  return getTokenFromValue(sizes, value);
+// @ts-ignore
+export default function(value: any, prop: any, config: any) {
+  return getTokenFromValue(sizes, value, config);
 }

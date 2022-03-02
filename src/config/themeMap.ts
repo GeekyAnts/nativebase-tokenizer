@@ -6,9 +6,12 @@ import resolveBorder from '../lib/resolveBorder';
 import resolveOpacity from '../lib/resolveOpacity';
 import resolveRadius from '../lib/resolveRadius';
 
-type ThemeMapProps = {
-  [key: string]: (value: any) => any;
-};
+// type ThemeMapProps = {
+//   [key: string]: (value: any) => any;
+// };
+interface ThemeMapProps {
+  [key: string]: any;
+}
 
 const themeMap: ThemeMapProps = {
   color: resolveColors,

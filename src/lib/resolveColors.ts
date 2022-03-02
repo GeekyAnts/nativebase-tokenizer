@@ -1,11 +1,13 @@
 import colors from './../theme/colors';
-export default function(color: string) {
+// @ts-ignore
+export default function(color: string, prop: any, config: any) {
   let mainColorObj: {
       [key: string]: string;
     },
     colorVal: any,
     nativeVal: any;
   Object.keys(colors).forEach(key => {
+    // @ts-ignore
     mainColorObj = colors[key];
     if (typeof mainColorObj == 'string') {
       if (mainColorObj == color) {
