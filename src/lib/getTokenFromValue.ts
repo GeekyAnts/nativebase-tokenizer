@@ -6,7 +6,7 @@ export const getTokenFromValue = (object: object, value: any, config: any) => {
     objKey => object[objKey] === value
   );
   if (!tokenFromValue) {
-    if (config.proximity) {
+    if (config && config.proximity) {
       return getTokenFromValue(
         object,
         getValueBasedOnConfig(object, value, config),
