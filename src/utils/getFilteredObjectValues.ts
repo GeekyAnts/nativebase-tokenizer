@@ -1,4 +1,3 @@
-// @ts-ignore
 export const getFilteredObjectValues = (
   stringOfValue: string,
   completeObjectValues: any

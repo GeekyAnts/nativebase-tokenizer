@@ -1,8 +1,7 @@
 import { absoluteToNB } from './../src/index';
 console.log(
-  absoluteToNB(490, 'fontWeight', {
-    proximity: false,
-    // proximityRange: 2,
-    // increasing: false,
+  absoluteToNB('10px', 'borderTopWidth', {
+    proximity: true,
+    // increasing: true,
   })
 );

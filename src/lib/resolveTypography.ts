@@ -1,8 +1,8 @@
-import { getTokenFromValue } from './getTokenFromValue';
+import { getTokenFromValue } from '../utils/getTokenFromValue';
 import typography from './../theme/typography';
-// @ts-ignore
-export default function(value: any, prop: any, config: any) {
+import { AbsoluteToNBProps } from './../types';
+export default function(...props: AbsoluteToNBProps[]) {
   // @ts-ignore
-  const typographyObject = typography[prop];
-  return getTokenFromValue(typographyObject, value, config);
+  const typographyObject = typography[props[1]];
+  return getTokenFromValue(typographyObject, props[0], props[2]);
 }

@@ -1,4 +1,3 @@
-// @ts-ignore
 export const getNearestTokenValue = (objectValues: any, searchValue: any) => {
   let newObtainedValue;
   const newHigherObtainedValue = Math.min.apply(

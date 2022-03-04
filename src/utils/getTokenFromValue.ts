@@ -3,7 +3,7 @@ import { getValueBasedOnConfig } from './getValueBasedOnConfig';
 export const getTokenFromValue = (object: object, value: any, config: any) => {
   const tokenFromValue = Object.keys(object).find(
     // @ts-ignore
-    objKey => object[objKey] === value
+    objKey => object[objKey] == value
   );
   if (!tokenFromValue) {
     if (config && config.proximity) {

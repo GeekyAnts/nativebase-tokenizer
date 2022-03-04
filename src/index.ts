@@ -1,7 +1,7 @@
 import themeMap from './config/themeMap';
 import propMap from './config/propMap';
 import propNameMap from './config/propNameMap';
-
+import { resolveError } from './lib/resolveError';
 interface configLayout {
   proximity?: boolean;
   proximityRange?: number;
@@ -16,5 +16,9 @@ export const absoluteToNB = (
   const name = propMap[prop] ? propMap[prop] : prop;
   const PropMapped = propNameMap[prop] ? propNameMap[prop] : prop;
   const resolver = themeMap[name];
-  return resolver(value, PropMapped, config);
+  try {
+    return resolver(value, PropMapped, config);
+  } catch (e) {
+    return resolveError(e);
+  }
 };

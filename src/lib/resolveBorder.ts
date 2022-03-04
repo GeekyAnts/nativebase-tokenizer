@@ -1,6 +1,6 @@
 import borders from '../theme/borders';
-import { getTokenFromValue } from './getTokenFromValue';
-// @ts-ignore
-export default function(value: any, prop: any, config: any) {
-  return getTokenFromValue(borders, value, config);
+import { getTokenFromValue } from '../utils/getTokenFromValue';
+import { AbsoluteToNBProps } from './../types';
+export default function(...props: AbsoluteToNBProps[]) {
+  return getTokenFromValue(borders, props[0], props[2]);
 }
