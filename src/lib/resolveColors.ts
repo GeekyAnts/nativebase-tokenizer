@@ -22,5 +22,5 @@ export default function(color: string, prop: any, config: any) {
       }
     }
   });
-  return nativeVal;
+  return nativeVal ? nativeVal : color;
 }
