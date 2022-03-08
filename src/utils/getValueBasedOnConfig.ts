@@ -7,9 +7,14 @@ export const getValueBasedOnConfig = (
   config: any
 ) => {
   let newObtainedValue, objectValues;
-  let stringOfValue: string = value.toString(); //String of value
-  let stringPartOfValue: string = value.toString().replace(/[0-9.]/g, ''); //String part like px,%,em etc...
-  let searchValue: number = Number(value.toString().replace(/[^0-9.]/g, '')); //Get number only part as number
+  newObtainedValue = typeof value == 'number' ? Math.round(value) : value;
+  let stringOfValue: string = newObtainedValue.toString(); //String of value
+  let stringPartOfValue: string = newObtainedValue
+    .toString()
+    .replace(/[0-9.]/g, ''); //String part like px,%,em etc...
+  let searchValue: number = Number(
+    newObtainedValue.toString().replace(/[^0-9.]/g, '')
+  ); //Get number only part as number
   newObtainedValue = searchValue;
   let completeObjectValues = Object.values(object);
   objectValues = getFilteredObjectValues(stringOfValue, completeObjectValues);
@@ -39,7 +44,11 @@ export const getValueBasedOnConfig = (
     }
   }
   if (stringPartOfValue) {
-    return newObtainedValue + stringPartOfValue;
+    const mergedValue =
+      stringPartOfValue == '-'
+        ? stringOfValue
+        : newObtainedValue + stringPartOfValue;
+    return mergedValue;
   }
   return newObtainedValue;
 };
